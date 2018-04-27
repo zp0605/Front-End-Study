@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!--屏幕的宽度和设备的宽度一致，初始缩放1:1，禁止用户缩放-->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>Document</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script src="bootstrap/js/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<style type="text/css">
+       div[class*="col-md"]{
+       	border:1px solid blue ;
+       }
+	</style>
+</head>
+<body >
+   <!--pc机大屏幕显示四张图片，pc机中等屏幕显示三张图片，平板显示两张图片 ，手机端显示一张图片-->
+	 <div class="container" style="background:#e6e6e6;">
+	   <div class="row">
+		      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+		      	  <img src="images/1.jpg" class="img-responsive">
+		      	   <p>
+		      	   格系统用于通过一系列的行（row）与列（col）的组合来创建页面布局，你的内容就可以放入这些创建好的布局
+		      	   </p>
+		      </div>
+		      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+		      	  <img src="images/1.jpg" class="img-responsive">
+		      	   <p>
+		      	   格系统用于通过一系列的行（row）与列（col）的组合来创建页面布局，你的内容就可以放入这些创建好的布局
+		      	   </p>
+		      </div>
+		      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	      	  <img src="images/1.jpg" class="img-responsive">
+	      	   <p>
+	      	   格系统用于通过一系列的行（row）与列（col）的组合来创建页面布局，你的内容就可以放入这些创建好的布局
+	      	   </p>
+	          </div>
+	          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	      	  <img src="images/1.jpg" class="img-responsive">
+	      	   <p>
+	      	   格系统用于通过一系列的行（row）与列（col）的组合来创建页面布局，你的内容就可以放入这些创建好的布局
+	      	   </p>
+	          </div>
+	   </div>
+       <div class="row">
+	      <div class="col-md-1">1</div>
+	      <div class="col-md-1">1</div>
+	      <div class="col-md-1">1</div>
+	      <div class="col-md-1">1</div>
+	      <div class="col-md-1">1</div>
+	      <div class="col-md-1">1</div>
+	      <div class="col-md-1">1</div>
+	      <div class="col-md-1">1</div>
+	      <div class="col-md-1">1</div>
+	      <div class="col-md-1">1</div>
+	      <div class="col-md-1">1</div>
+	      <div class="col-md-1">1</div>
+	   </div>
+	   <div class="row">
+	     <div class="col-md-4">4444</div>
+	     <div class="col-md-2 col-md-offset-5">222</div>
+	   </div>
+
+	   <div class="row">
+	      <div class="col-md-4">444</div>
+	      <div class="col-md-8">88888</div>
+	   </div>
+	    <div class="row">
+	      <div class="col-md-4 col-md-push-8">444</div>
+	      <div class="col-md-8 col-md-pull-4">88888</div>
+	   </div>
+	 </div>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:JS第三天</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="1-">1.函数</h1>
+<blockquote>
+<p>学习目标：掌握函数的基本用法，会使用函数解决一些问题。</p>
+</blockquote>
+<h2 id="1-1-">1.1.函数的基础知识</h2>
+<h3 id="1-1-1-">1.1.1.为什么要使用函数</h3>
+<blockquote>
+<p>在写代码的时候，有一些常用的代码需要书写多次，如果直接复制粘贴的话，会造成大量的冗余代码，为了提高代码的重用率，提高编码效率，我们需要使用函数。函数可以用来封装一段重复的代码，只需要声明一次，就可以被多次调用。</p>
+</blockquote>
+<p>冗余代码缺点：</p>
+<p>1.代码重复，可阅读性差。</p>
+<p>2.不易维护。一旦逻辑发生改变，所有的地方也都要修改。</p>
+<h3 id="1-1-2-">1.1.2.函数的声明与调用</h3>
+<p>函数的声明：声明函数需要用到<strong>function</strong>关键字。</p>
+<pre><code class="lang-javascript">function 函数名(){
+  //函数体
+}
+</code></pre>
+<p>特点：</p>
+<pre><code>1.函数在声明时不会执行，只有被调用时才会被执行。
+2.函数一般用来做一件事，在对函数进行命名时一定要注意，做到顾名思义。
+</code></pre><p>函数的调用：</p>
+<pre><code>函数名();
+</code></pre><p>示例代码：</p>
+<pre><code class="lang-javascript">//声明一个函数
+function sayHi(){
+  alert(&quot;吃了没&quot;);
+}
+//调用函数
+sayHi();
+</code></pre>
+<p>练习:</p>
+<pre><code>1.封装一个打招呼的函数
+2.封装一个函数，计算两个数的和
+3.封装一个函数，计算1~100之间所有数的和
+</code></pre><h3 id="1-1-3-">1.1.3.函数的参数</h3>
+<blockquote>
+<p>1.形式参数：在定义函数名和函数体的时候使用的参数，目的是用来接收调用该函数时传入的值。这个参数是一个不存在的变量，仅仅只是为了占用位置，所以我们可以称它为形式参数，简称形参。</p>
+<p>2.实际参数：在调用有参函数时，函数名后面括号中的参数被称为实际参数，实参可以是常量、变量或者表达式。</p>
+</blockquote>
+<p>语法：</p>
+<pre><code class="lang-javascript">//有参函数在声明时，需要在函数名后的括号里写上形参
+function 函数名(形参1,形参2,形参3...){
+  //函数体
+}
+//调用有参函数,在函数名后面的括号里直接传入实际参数
+函数名(实参1,实参2,实参3...);
+</code></pre>
+<p>练习：</p>
+<pre><code>1.计算1~n的数字之和
+2.计算两个数的和
+3.计算m~n之间数字之和
+</code></pre><h3 id="1-1-4-">1.1.4.函数的返回值</h3>
+<blockquote>
+<p>很多情况下，调用者在函数执行完成以后，需要拿到函数执行的结果（比如，拿到两个数的和，拿到两个数的较大数等），这个返回的结果就叫做返回值。</p>
+</blockquote>
+<p>返回值语法：使用return关键字标识函数的返回值。</p>
+<pre><code class="lang-javascript">function 函数名(形参1,形参2,形参3...) {
+  //函数体
+ return 返回值;   //return关键字用来标识函数的返回值
+}
+var result = 函数名(形参1,形参2,形参3...);  //调用者定义一个变量，用来保存函数的返回值。
+</code></pre>
+<p>练习:</p>
+<pre><code>1.计算1~n之间所有数的和，并返回结果。
+2.计算两个数的和，并返回结果
+3.计算m~n之间所有数的和，并返回结果。
+</code></pre><h3 id="1-1-5-">1.1.5.函数三要素</h3>
+<p>函数的三要素指的是：函数名、参数以及返回值。</p>
+<p>文档注释：文档注释/ <em>* </em>/通常用在函数的声明中，用来解释这个函数的作用。（包括函数名，参数以及返回值的作用）</p>
+<font color="red">声明函数时，使用文档注释对函数进行说明，是一种良好的开发习惯</font>
+
+<pre><code class="lang-javascript"> /**
+   * 求圆的面积
+   * @param r {number} 圆的半径
+   * @returns {number} 圆的面积
+   */
+function getArea(r){
+  return Math.PI*r*r;
+}
+getArea(3);
+</code></pre>
+<p>练习：</p>
+<pre><code>1.根据半径计算圆的面积
+2.根据半径计算圆的周长
+3.求两个数中的较大数。
+4.求一个数组中的最大数。
+5.求一个数组中的最小数。
+6.翻转一个数组，返回一个新的数组。
+7.给一个数组进行倒序排序。
+</code></pre><h2 id="1-2-">1.2.函数的高级知识</h2>
+<h3 id="1-2-1-">1.2.1.函数调用</h3>
+<blockquote>
+<p>在函数内部是可以调用其它函数的</p>
+</blockquote>
+<pre><code class="lang-javascript">function fn1(){
+  console.log(&quot;fn1开始&quot;);
+  fn2();    //在函数fn1里调用了fn2函数
+  console.log(&quot;fn1结束&quot;);
+}
+function fn2(){
+  console.log(&quot;fn2的代码&quot;);
+  console.log(&quot;fn2的代码&quot;);
+  console.log(&quot;fn2的代码&quot;);
+}
+fn1();
+</code></pre>
+<p>断点调试：</p>
+<pre><code>1.F8:跳转到下一个断点
+2.F10:单步运行（不会跳入到函数里）
+3.F11:单步调试（跳入到函数里）
+4.Shift+F11:跳出函数调用
+</code></pre><p>练习：</p>
+<pre><code>1.求阶乘
+2.求阶乘的和
+3.求任意三个数的最大值。
+</code></pre><h3 id="1-2-2-">1.2.2.函数参数与返回值详解</h3>
+<p>函数的参数详解：</p>
+<p>1.在JavaScript中，没有函数重载，只有覆盖。如果定义了两个同名函数，后面的函数会覆盖掉前面的函数。</p>
+<p>2.在JavaScript中，实参的个数可以和形参的个数不一致。</p>
+<ul>
+<li>如果实参的个数大于形参的个数，多余的实参会被舍弃。</li>
+<li>如果实参的个数小于形参的个数，不足的实参使用undefined替代。</li>
+</ul>
+<p>函数返回值详解：</p>
+<pre><code>1.return 语句作为函数的返回，它后面的语句不会执行。
+2.函数也可以没有return语句。如果一个函数没有明确的返回值，那么这个函数的返回值是undefined.
+3.函数也可以直接return，而不给返回值，相当于return undefined.作用是用来结束函数的调用。
+</code></pre><p>练习:</p>
+<pre><code>1.比较两个数据大小，返回更大的那个数。
+2.求数组中的最大值和最大值所在的位置，并且返回。
+</code></pre><h3 id="1-2-3-">1.2.3.函数的作用域</h3>
+<p>全局变量：在最外层声明的变量就是全局变量，全局变量在任何地方都能够被访问。</p>
+<p>局部变量：在函数中声明的变量就是局部变量，局部变量只能在当前函数内能够被访问。</p>
+<p>隐式全局变量：没有使用var声明的变量也是全局变量。</p>
+<p>作用域：变量可以发挥作用的区域。</p>
+<p>全局作用域：在script标签内，函数外定义的作用域就是全局作用域。在全局作用域中定义的变量是全局变量。</p>
+<p>函数作用域：在函数中的区域叫做函数区域，在函数作用域中定义的变量就是局部变量，只能在当前函数中访问。</p>
+<font color="red">在函数中，只有全局作用域和函数作用域。在if、while、for等语句中定义的变量都是全局变量。 </font>
+
+<h3 id="1-2-4-">1.2.4.预解析</h3>
+<blockquote>
+<p>JS解析器在执行JS代码的时候，分为两个过程：预解析过程和代码执行过程。</p>
+</blockquote>
+<p>预解析过程：</p>
+<p>1.把变量的声明提升到当前作用域的最前面，只会提升声明，不会提升赋值。</p>
+<p>2.把函数的声明提升到当前作用域的最前面，只会提升声明，不会提升调用。</p>
+<p>3.先提升var,再提升function</p>
+<p>思考：</p>
+<pre><code>console.log(a);
+function a(){
+  console.log(&quot;aaaaa&quot;);
+}
+var a = 1;
+console.log(a);
+</code></pre><p>面试题：</p>
+<pre><code class="lang-javascript">var num = 10;
+fn1();
+function fn1(){
+  console.log(num);
+  var num = 20;
+}
+
+var a = 18;
+fn2();
+function fn2(){
+  var b = 9;
+  console.log(a);
+  console.log(b);
+}
+
+fn3();
+console.log(c);
+console.log(b);
+console.log(a);
+function fn3(){
+  a = b = c = 9;
+  console.log(a);
+  console.log(b);
+  console.log(c);
+}
+</code></pre>
+<h3 id="1-2-5-">1.2.5.声明函数的两种方式</h3>
+<p>函数声明（命名函数）</p>
+<pre><code class="lang-javaScript">function 函数名(){
+  //函数体
+}
+</code></pre>
+<p>函数表达式(匿名函数)</p>
+<pre><code class="lang-javaScript">var 函数名 = function(){
+  //函数体
+}
+</code></pre>
+<p>这两种函数的区别：</p>
+<p>1.命名函数可以在声明之前调用，因为预解析时，会先把函数的声明给解析出来。</p>
+<p>2.<font color="red">匿名函数的调用必须要放在声明之后</font>，因为预解析时，只会声明变量，不会给变量赋值！（DOM注册事件）</p>
+<h3 id="1-2-6-">1.2.6.匿名函数</h3>
+<blockquote>
+<p>匿名函数：没有名字的函数</p>
+</blockquote>
+<p>匿名函数的使用:</p>
+<pre><code class="lang-javaScript">1.将匿名函数赋值给一个变量，通过变量名来调用函数。
+var test = function(){   //将匿名函数赋值给一个变量
+  console.log(&quot;Hello&quot;);
+}
+test();  //通过变量名来调用函数
+2.匿名自调用函数。
+(function(){
+  console.log(&quot;Hi&quot;);
+})();
+</code></pre>
+<p>自执行函数的作用：防止全局变量污染。</p>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

@@ -1,0 +1,11 @@
+{
+	"下拉刷新模板方法": {
+		"prefix": "ion-label-pullLoadMoreData", // 简化的命令名
+		"body": [
+			"\r\n<!-- 上拉加载更多 -->\r\n<ion-infinite-scroll (ionInfinite)=\"loadMoreData($event)\" #infiniteScrollObj>\r\n\t<ion-infinite-scroll-content loadingText=\"正在加载更多...\" loadingSpinner=\"bubbles\">\r\n\t</ion-infinite-scroll-content>\r\n</ion-infinite-scroll>"
+		],
+		"description": "上拉加载更多组合标签"
+	},
+	
+}
+

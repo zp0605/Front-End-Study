@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<!--屏幕和设备的屏幕一致，初始缩放为1:1，禁止用户缩放-->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>Document</title>
+	<!--引入外部的bootstrap中的css文件-->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="bootstrap/js/jquery.min.js"></script>
+	<!--再引入bootstrap.min.js文件-->
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<style>
+        div[class*="col"]{
+        	border:1px solid blue;
+        }
+	</style>
+</head>
+<body >
+  <div class="container" style="background:gray">
+    <div class="row">
+      <div class="col-md-3 col-xs-6 col-sm-4">44</div>
+      <div class="col-md-3 col-xs-6 col-sm-4">44</div>
+      <div class="col-md-3 col-xs-6 col-sm-4">44</div>
+      <div class="col-md-3 col-xs-6 col-sm-4">44</div>
+      <div class="col-md-3 col-xs-6 col-sm-4">44</div>
+      <div class="col-md-3 col-xs-6 col-sm-4">44</div>
+    </div>
+  </div>	
+</body>
+</html>

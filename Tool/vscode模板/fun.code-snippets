@@ -1,0 +1,49 @@
+{
+	"下拉刷新模板方法": {
+		"prefix": "ion-fun-fresh", // 简化的命令名
+		"body": [
+			//下拉刷新函数
+		   "//下拉刷新\r\ndoRefresh(refresher){\r\n\tconsole.log('doRefresh...'+refresher);\r\n\tthis.onReload(refresher);\r\n\tthis.noneData = false;\r\n}",
+		   //重新加载函数
+		   "\r\n//重新加载\r\nonReload(event){\r\n\tthis.dataLoaded = false;\r\n\tconsole.log(\"onReload...\")\r\n\tif (this.infiniteScrollObj) {\r\n\t\this.infiniteScrollObj._highestY = 0;\r\n\t\tthis.infiniteScrollObj._lastCheck = 0;\r\n\t}\r\n\tthis.datas = [];\r\n\tthis.pageNo = 1;\r\n\tthis.pagination(event);\r\n}",
+		   "\r\n//向服务器请求分析数据\r\npagination(event) {\r\n\tthis.noneData = false;\r\n\tthis.isInfinite = false;\r\n\tthis.isNotMatch = false;\r\n\tlet pageNo = this.pageNo;\r\n\tif (!pageNo) {\r\n\t\tpageNo = 1;\r\n\t}\r\n\r\n\tlet temptext = \"\";\r\n\r\n\tlet url = this.config.server + '/$reqpath$/listjson?page=' + pageNo + '&pageSize=15' + temptext;\r\n\turl = this.userData.getCloudUrl(url);\r\n}"
+		],
+		"description": "下拉刷新方法"
+	},
+	"下拉加载更多函数模板": {
+		"prefix": "ion-fun-loadMoreData", // 简化的命令名
+		"body": [
+			"//下拉加载更多\r\nloadMoreData(infiniteScroll) {\r\n\tconsole.log(\"loadMoreData...\");\r\n\tif (this.hasNext) {\r\n\t\tthis.pageNo += 1;\r\n\t\tthis.pagination(infiniteScroll);\r\n\t} else {\r\n\t\tconsole.log('No next page.');\r\n\t\tinfiniteScroll.complete();\r\n\t}\r\n}"
+		],
+		"description": "下拉加载更多函数模板"
+	},
+	"authHttpGet请求模板": {
+		"prefix": "ion-fun-authHttpGet", //authHttpGet请求模板
+		"body": [
+			"let url = this.config.server + '$param$';\r\nthis.authHttp.get(url)\r\n\t.subscribe(\r\n\t\tresponse => {\r\n\t\t\tlet responseData = JSON.parse(response.text());\r\n\t\t\tconsole.log('req authHttp get:' + response.text());\r\n\t\t},\r\n\t\terr => {\r\n\t\t\t//throw err;\r\n\t\t},\r\n\t\t() => {\r\n\t\t\tconsole.log('authHttp get Complete');\r\n\t\t}\r\n\t);"
+		],
+		"description": "authHttpGet请求模板"
+	},
+	"httpAuthPost请求模板":{
+		"prefix": "ion-fun-httpAuthPost",
+        "body": [
+			"let params = {\r\n\r\n};\r\nlet url = this.config.server + \"$url$\";\r\nthis.authHttp.post(this.userData.getUrl(url), this.userData.serializeData(params), { headers: postHeaders })\r\n\t.subscribe(\r\n\t\tresponse => {\r\n\t\t\tlet contentType = response.headers.get(\"Content-Type\");\r\n\t\t\tif (contentType.startsWith(\"application/json;\")) {\r\n\r\n\t\t\t} else {\r\n\r\n\t\t\t}\r\n\t\t}\r\n\t);"
+		],
+		"description": "httpAuthPost请求模板"
+	},
+	"httpGet请求模板":{
+		"prefix": "ion-fun-httpGet",
+        "body": [
+			"let url = \"$url$\";\r\ntry {\r\n\tthis.http.get(url)\r\n\t\t.subscribe(\r\n\t\tresponse => {\r\n\t\t\t\tlet resdata = JSON.parse(response.text());\r\n\t\t\t\tconsole.log(\"resData:\" + response.text());\r\n\t\t\t},\r\n\t\t\terr => {\r\n\t\t\t\tconsole.log('req get error:' + err);\r\n\t\t\t\tif (event) {\r\n\t\t\t\tevent.complete();\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t() => {\r\n\t\t\t\tconsole.log('req get Complete');\r\n\t\t\t\tif (event) {\r\n\t\t\t\t\tevent.complete();\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n} catch (e) {\r\n\tthis.errorHandler.handleError(e);\r\n}"
+		],
+		"description": "httpGet请求模板"
+	},
+	"httpPost请求模板":{
+		"prefix": "ion-fun-httpPost",
+        "body": [
+			"\r\nlet url = \"$url$\"\r\nlet params = \"$param$\"\r\nthis.authHttp.post(this.userData.getUrl(url), params, { headers: postHeaders })\r\n\t.subscribe(\r\n\t\tresponse => {\r\n\t\t\tlet contentType = response.headers.get(\"Content-Type\");\r\n\t\t\tlet resData = JSON.parse(response.text());\r\n\t\t\tconsole.log(\"contentType:\" + contentType + \",rsData:\" + resData);\r\n\t\t\tif (contentType.startsWith(\"application/json;\")) {\r\n\r\n\t\t\t} else {\r\n\r\n\t\t\t}\r\n\t\t}\r\n\t);"
+		],
+		"description": "httpPost请求模板"
+	}
+}
+
