@@ -11,7 +11,7 @@
 		window.onload=function(){
 			let vm=new Vue({
 				el:'.container',
-				data:{ 
+				data:{ //data （model）如果数据发生了改变，view会也跟着变化
 					users:[
 						{name:'tom',age:24,email:'tom@itany.com'},
 						{name:'jack',age:23,email:'jack@sina.com'}
@@ -77,6 +77,7 @@
 				</tr>
 			</thead>
 			<tbody>
+				 <!--遍历users生成tr-->
 				<tr v-for="(user,index) in users" class="text-center">
 					<td>{{index+1}}</td>
 					<td>{{user.name}}</td>
