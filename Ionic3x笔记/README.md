@@ -7,6 +7,7 @@
 * ionic中的UI 组件（UI Components）页面布局、栅格系统
 * ionic 中的路由导航NavController以及路由传值 
 * ionic 上拉刷新与下拉刷新
+* [ionic性能优化](#ionic性能优化)
 
 
 #相关文档
@@ -189,3 +190,33 @@ android:t6k6zXeH1MDTGTxLGAHe8o3y3MGC7ZeE
 权限：
 sudo chmod -R 777
 ```
+
+#### <a id="ionic性能优化">ionic性能优化</a>
+-----
+* 低配Android手机页面切换流畅性优化：使用ionic-native-transitions优化
+* 列表页面上的item项，点击的时候会有颜色变暗的效果，但这种效果会明显降低页面跳转的流畅度；可以通过CSS样式来优化：
+
+```
+.item.active,
+.item.activated,
+.item-complex.active .item-content,
+.item-complex.activated .item-content,
+.item .item-content.active,
+.item .item-content.activated {
+	border-color: #fff;
+	background-color: #fff;
+}
+```
+
+##### 语法优化
+* 	[减少不必要的双向绑定](https://www.oschina.net/translate/easy-two-way-data-binding-in-javascript):AngularJS的双向绑定是通过为每个需要双向绑定的数据对象添加[Math Processing Error]
+watchers值的old/new value是否发生变化
+*  特别注意ionic-views的生命周期，在页面销毁的时候，要注意释放view的相关资源。
+*  减少html页面中的filter:原因是每当filter执行时，都会走两次$digest cycle，一次是scope中有数据改动，一次是查看是否有更多的改动需要更新数据。当数据量很大时对性能会有很大影响。
+*  ng-if替代ng-show/ng-hide:因为ng-if在等于false时会把元素从DOM中移除，所以所有绑在该元素上的handler会一同失效。而ng-show/ng-hide不会移除DOM元素，而是使用css style去隐藏/显示DOM元素，所以handlers会一直存在。
+
+##### 功能优化
+* 跳转页面的时候，先跳转页面，在请求页面上的数据，尽可能减少请求的资源量，并通过loading效果等待载入
+* App启动的时候，在Index中载入各个页面需要用到的css和js文件，在程序逻辑中避免或尽可能的较少dom操作，特别是高度位置等的计算
+* 列表页面上的数据项目中展示的图片，大小要尽量小一点，减少运存的占用同时也减少了载入的时间，同时实现lazyload延迟加载
+* 更新频率较少比如城市、好友列表等数据，可以在本地缓存，app启动的时候异步加载.
