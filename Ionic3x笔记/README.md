@@ -7,7 +7,9 @@
 * ionic中的UI 组件（UI Components）页面布局、栅格系统
 * ionic 中的路由导航NavController以及路由传值 
 * ionic 上拉刷新与下拉刷新
+* [开发中常见问题](#开发中常见问题)
 * [ionic性能优化](#ionic性能优化)
+
 
 
 #相关文档
@@ -132,7 +134,7 @@
 * ctrl+t:根据名字查找，可以用于查找函数
 * [vscode自定义代码块](https://blog.csdn.net/DeepLies/article/details/53248287)  [VS ionic模板请参考](../Tool/vscode模板)
 
-##开发中常见问题
+##<a id="开发中常见问题">开发中常见问题</a>
 * http请求时，在android真机上报404错误。（很可能是缺少了cordova-plugin-whitelist）
 
 ```
@@ -157,6 +159,27 @@
   2,npm install --global --production windows-build-tools 
   
   ```
+*  angular5在chrom的控制台输出:webpackJsonp undefined 。。。
+   
+  ```
+    在src目录下面index.html文件中添加：
+    <script src="build/vendor.js"></script> 
+  ```
+* angular4升级angular5后，提示OpaqueToken不存在
+
+```
+angular 4:
+	import { OpaqueToken } from "@angular/core";
+	export let xxx = new OpaqueToken("config");
+修改为：
+   import { InjectionToken } from "@angular/core";
+   export let APP_CONFIG = new InjectionToken("config");
+	
+OpaqueToken与InjectionToken都用于创建可在 Provider 中使用的Token
+OpaqueToken是在angular2x中引入的
+而InjectionToken是在angular4x中引入的
+```
+  
 ##webStorm常用快捷键(Mac OS X)
   
   ```
