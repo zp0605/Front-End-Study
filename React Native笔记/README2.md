@@ -31,7 +31,7 @@
 * [React Native 性能优化](https://github.com/crazycodeboy/RNStudyNotes/tree/master/React%20Native%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
 * [React Native Awesome(汇聚知识，分享精华)](https://github.com/crazycodeboy/react-native-awesome)：只求精不求全的React Native学习资料库。React Native Awesome 汇集了各类react-native学习资料、工具、组件、开源App、以及相关新闻等（**据说还有资源下载哦**）。
 * [React Native 每日一学](React Native 每日一学)：每天一个知识点（技巧，经验，填坑日记等），每天学一点，离大神近一点。
-	1. [D1:React Native 读取本地的json文件 (2016-8-18)](React Native 每日一学#d1react-native-读取本地的json文件-2016-8-18)
+	1. [D1:React Native 读取本地的json文件 (2016-8-18)](React Native 每日一学/Readme.md#d1react-native-读取本地的json文件-2016-8-18)
 	2. [D2:React Native import 文件的小技巧 (2016-8-19)](#d2react-native-import-文件的小技巧-2016-8-19)
 	3. [D3:React Native 真机调试 (2016-8-22)](#d3react-native-真机调试-2016-8-22)
 	4. [D4:React Native 函数的绑定 (2016-8-23)](#d4react-native-函数的绑定-2016-8-23)
