@@ -230,6 +230,30 @@ sudo chmod -R 777
 	background-color: #fff;
 }
 ```
+* [使apk更小或运行速度更快](https://stackoverflow.com/questions/50021677/how-to-speed-up-optimize-ionic-mobile-app-android)
+
+```
+ionic cordova build android --prod --aot --minifyjs --minifycss --optimizejs --release
+或
+ionic cordova run android --prod 
+
+main.ts增加enableProdMode() 如：
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import {enableProdMode} from '@angular/core';
+
+import { AppModule } from './app.module';
+
+// this is the magic wand
+enableProdMode();
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+```
+* [Optimizing large list View in Ionic App](https://stackoverflow.com/questions/35913128/optimizing-large-list-view-in-ionic-app)
+#####性能优化
+	* [第一部份](https://medium.com/@u_glow/optimising-the-performance-of-an-ionic-application-part-1-23003734dd11)
+	* [第二部份](https://medium.com/@u_glow/optimising-the-performance-of-an-ionic-application-part-2-9749f63c9c7c)
 
 ##### 语法优化
 * 	[减少不必要的双向绑定](https://www.oschina.net/translate/easy-two-way-data-binding-in-javascript):AngularJS的双向绑定是通过为每个需要双向绑定的数据对象添加[Math Processing Error]
