@@ -19,6 +19,8 @@
       * 当应用的js都以模块来编写的, 这个应用就是一个模块化的应用
     * 组件化:
       * 当应用是以多组件的方式实现功能, 这上应用就是一个组件化的应用
+      
+---------
 ##2. React的基本认识
   * React 是 Facebook开源的一个js库
   * 一个用来动态构建用户界面的js库
@@ -32,23 +34,26 @@
   * React高效的原因
     * 虚拟(virtual)DOM, 不总是直接操作DOM(批量更新, 减少更新的次数) ,而是操作的虚拟DOM，操作完虚拟DOM再统一映射真实的DOM,最后再渲染。（真实的DOM每修改一个节点就会渲染，效率低）
     * 高效的DOM Diff算法, 最小化页面重绘(减小页面更新的区域)，DOM Diff可以计算出变化前和变化后的DOM的差异
+
 ##3. 使用React
-	* 导入相关js库文件(react.js, react-dom.js, babel.min.js)
-	* 编码:
-		
-		```
-      <div id="container"></div>
-      <script type="text/babel">//必须用babel
-        var aa = 123
-        //1，创建虚拟DOM对象，创建的时候可以
-             在JS中写html标签；
-           let user = <h1>{aa}</h1>;
-        //2，渲染虚拟DOM对象
-        //ReactDOM.render(user, containerDOM);
-        ReactDOM.render(user, document.getElementById('container'));
-        //render第一个参数是虚拟DOM对象，第二个参数是对应的DOM容器
-      </script>
-		```
+	
+* 导入相关js库文件(react.js, react-dom.js, babel.min.js)
+* 编码:
+	
+	```
+  <div id="container"></div>
+  <script type="text/babel">//必须用babel
+    var aa = 123
+    //1，创建虚拟DOM对象，创建的时候可以
+         在JS中写html标签；
+       let user = <h1>{aa}</h1>;
+    //2，渲染虚拟DOM对象
+    //ReactDOM.render(user, containerDOM);
+    ReactDOM.render(user, document.getElementById('container'));
+    //render第一个参数是虚拟DOM对象，第二个参数是对应的DOM容器
+  </script>
+	```
+	
 ##4. JSX
 -----
 
@@ -59,8 +64,8 @@
    创建的就是简单的虚拟DOM对象:
  
  ```
-     法一：var element = React.createElement('h1', {id:'myTitle'}, 'hello');
-     法二：let element = <h2>hello react</h2>
+ 法一：var element = React.createElement('h1', {id:'myTitle'}, 'hello');
+ 法二：let element = <h2>hello react</h2>
  ```   
 
   2). 虚拟DOM对象最终都会被React转换为真实的DOM

@@ -16,7 +16,7 @@
 * [Canvas笔记](Canvas笔记)
 * [React Native笔记](React Native笔记)
 * [React笔记](React笔记)
-* [vue.js笔记](vue笔记)
+* [vue.js笔记](Vue笔记)
 * [node.js笔记](/Users/zhangping/Documents/github/Front-End-Study/node笔记)  [node.js常用命令](node笔记/nodeJS常用命令.md)
 
 ----
