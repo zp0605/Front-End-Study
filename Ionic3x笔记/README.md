@@ -135,13 +135,27 @@
 * [vscode自定义代码块](https://blog.csdn.net/DeepLies/article/details/53248287)  [VS ionic模板请参考](../Tool/vscode模板)
 
 ##<a id="开发中常见问题">开发中常见问题</a>
+* [在xcode里面提示：duplicate symbol _OBJC_CLASS_$_CDVLogger](https://stackoverflow.com/questions/46633797/build-cordova-meteor-ionic-for-ios-duplicate-symbol-objc-class-cdvlogger)
+
+```
+  cordova plugin remove cordova-plugin-console
+  cordova platform remove ios
+  cordova platform add ios
+  
+```
+
+* xcode里面提示：library not found for -lcrypto
+```
+  cordova plugin remove cordova-plugin-console
+  cordova platform remove ios
+  cordova platform add ios
+  
 * http请求时，在android真机上报404错误。（很可能是缺少了cordova-plugin-whitelist）
 
 ```
-  如果是首次的话，在项目根目录执行：cordova plugin add cordova-plugin-whitelist
-  如果已经安装过了，先删除再安装：
-  cordova plugin remove cordova-plugin-whitelist
-  cordova plugin add cordova-plugin-whitelist
+  1，Build Settings->search Paths->Library Search Paths
+  2，在里面添加："$(SRCROOT)/消检通/Plugins/cordova-plugin-baidumaplocation"
+  
 ```
 
 * 如果遇到localStorage与配置文件不一致的情况，清除浏览器对应站点的全部缓存或删除app重新安装。
