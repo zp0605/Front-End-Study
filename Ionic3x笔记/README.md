@@ -135,6 +135,24 @@
 * [vscode自定义代码块](https://blog.csdn.net/DeepLies/article/details/53248287)  [VS ionic模板请参考](../Tool/vscode模板)
 
 ##<a id="开发中常见问题">开发中常见问题</a>
+
+* 执行ionic cordova build android的时候提示：Error: spawn EACCES
+
+```
+提示:
+	ANDROID_HOME=/Users/yons/Library/Android/sdk
+	JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home
+	Reading build config file: /Users/yons/Documents/xjtapp/build.json
+	
+	Subproject Path: CordovaLib
+	Error: spawn EACCES
+解决办法：
+   sudo chmod 755 /Applications/Android\ Studio.app/Contents/gradle/gradle-4.4/bin/gradle 
+   sudo chmod 755 ../platforms/android/gradlew 
+
+```
+
+
 * [在xcode里面提示：duplicate symbol _OBJC_CLASS_$_CDVLogger](https://stackoverflow.com/questions/46633797/build-cordova-meteor-ionic-for-ios-duplicate-symbol-objc-class-cdvlogger)
 
 ```
