@@ -136,6 +136,27 @@
 
 ##<a id="开发中常见问题">开发中常见问题</a>
 
+* android打包的时候提示：
+
+
+```
+Could not resolve all files for configuration ':debugCompileClasspath'.
+> Could not resolve com.android.support:appcompat-v7:27.+.
+  Required by:
+      project :
+   > Could not resolve com.android.support:appcompat-v7:27.+.
+      > Failed to list versions for com.android.support:appcompat-v7.
+         > Unable to load Maven meta-data from https://jcenter.bintray.com/com/android/support/appcompat-v7/maven-metadata.xml.
+            > Could not get resource 'https://jcenter.bintray.com/com/android/support/appcompat-v7/maven-metadata.xml'.
+               > Could not GET 'https://jcenter.bintray.com/com/android/support/appcompat-v7/maven-metadata.xml'.
+                  > Connect to 127.0.0.1:58037 [/127.0.0.1] failed: Connection refused (Connection refused)
+
+尝试方法：
+   1，重装node.js ionic codova ,然后重新添加平台
+   2，重新添加平台，sudo chmod 777 xxxx/platforms/android/gradlew
+   3,检查gralde环境变量中的版本与平台里面的gradle-wrapper.properties中的版本是否一样
+
+```
 * 执行ionic cordova build android的时候提示：Error: spawn EACCES
 
 ```
