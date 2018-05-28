@@ -9,7 +9,6 @@
 * ionic 上拉刷新与下拉刷新
 * [开发中常见问题](#开发中常见问题)
 * [ionic性能优化](#ionic性能优化)
-* [git 版本回滚](#git版本回滚)
 
 
 
@@ -136,6 +135,27 @@
 * [vscode自定义代码块](https://blog.csdn.net/DeepLies/article/details/53248287)  [VS ionic模板请参考](../Tool/vscode模板)
 
 ##<a id="开发中常见问题">开发中常见问题</a>
+
+* 打包的时候提示内存不足
+
+```
+node --max_old_space_size=8000 $(which ionic) cordova build android --prod --aot
+ionic cordova build android --prod --aot
+
+```
+
+*  Element uses-permission#android.permission.CAMERA at AndroidManifest.xml:128:5-90 duplicated with element declared at AndroidManifest.xml:126:5-65
+
+```
+  cordova plugin rm cordova-plugin-cszbar 
+  cordova plugin rm cordova-plugin-console
+```
+
+* Failed to restore plugin "cordova-plugin-intent" from config.xml. You might need to try adding it again. Error: Error: Cannot find module '../cordova/platform_metadata'
+
+```
+ npm install cordova@7.0.0
+```
 
 * android打包的时候提示：
 
@@ -334,10 +354,3 @@ watchers值的old/new value是否发生变化
 * App启动的时候，在Index中载入各个页面需要用到的css和js文件，在程序逻辑中避免或尽可能的较少dom操作，特别是高度位置等的计算
 * 列表页面上的数据项目中展示的图片，大小要尽量小一点，减少运存的占用同时也减少了载入的时间，同时实现lazyload延迟加载
 * 更新频率较少比如城市、好友列表等数据，可以在本地缓存，app启动的时候异步加载.
-
-##### <span  id="git版本回滚">git版本回滚</span>
-
-```
-git log --pretty=oneline
-git reset --hard id
-```
