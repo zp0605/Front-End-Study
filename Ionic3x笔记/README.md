@@ -153,6 +153,17 @@ Could not resolve all files for configuration ':debugCompileClasspath'.
 
 尝试方法：
    1，重装node.js ionic codova ,然后重新添加平台
+       删除node.js
+       sudo rm /usr/local/bin/npm
+		sudo rm /usr/local/share/man/man1/node.1
+		sudo rm /usr/local/lib/dtrace/node.d
+		sudo rm -rf ~/.npm
+		sudo rm -rf ~/.node-gyp
+		sudo rm /opt/local/bin/node
+		sudo rm /opt/local/include/node
+		sudo rm -rf /opt/local/lib/node_modules
+
+
    2，重新添加平台，sudo chmod 777 xxxx/platforms/android/gradlew
    3,检查gralde环境变量中的版本与平台里面的gradle-wrapper.properties中的版本是否一样
 
