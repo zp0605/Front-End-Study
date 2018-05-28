@@ -153,6 +153,8 @@ Could not resolve all files for configuration ':debugCompileClasspath'.
 
 尝试方法：
    1，重装node.js ionic codova ,然后重新添加平台
+       npm uninstall ionic
+       npm uninstall cordova
        删除node.js
        sudo rm /usr/local/bin/npm
 		sudo rm /usr/local/share/man/man1/node.1
