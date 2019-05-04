@@ -18,6 +18,7 @@
 * [React笔记](React笔记)
 * [vue.js笔记](Vue笔记)
 * [node.js笔记](/Users/zhangping/Documents/github/Front-End-Study/node笔记)  [node.js常用命令](node笔记/nodeJS常用命令.md)
+* [小程序](小程序笔记)
 
 ----
 ##[各类文档](API文档)
